@@ -6,8 +6,8 @@ const TodoList = ({todos, onTodoClick}) => {
 
     return (
         <ul>
-            {todos.map((todo, index) => {
-                <Todo key={index} {...todo} onClick={() => onTodoClick(index)}/>
+            {todos.map(todo => {
+                return(<Todo key={todo.id} {...todo} onClick={() => onTodoClick(todo.id)}/>)
             })}
         </ul>
     )

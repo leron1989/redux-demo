@@ -9,6 +9,10 @@ module.exports = {
         path:path.resolve(__dirname, 'dist')
     },
     devtool: 'inline-source-map',
+    devServer:{
+        //上下文根目录
+        contentBase: './dist'
+    },
     module:{
         rules:[
             {

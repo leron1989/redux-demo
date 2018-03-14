@@ -1,19 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Link = ({active, children, onCLick}) => {
-
-    if(active){
-        return <span>{children}</span>
-    }
+const Link = ({active, children, onClick}) => {
 
     return(
-        <a onClick={e => {
-            e.preventDefault();
-            onClick();
-        }}>
-            <span>{children}</span>
-        </a>
+		<button onClick={onClick} disabled={active}>
+			{children}
+		</button>
     )
 }
 
