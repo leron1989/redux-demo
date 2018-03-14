@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Link = ({active, text, onCLick}) => {
+const Link = ({active, children, onCLick}) => {
 
     if(active){
-        return <span>{text}</span>
+        return <span>{children}</span>
     }
 
     return(
@@ -12,14 +12,14 @@ const Link = ({active, text, onCLick}) => {
             e.preventDefault();
             onClick();
         }}>
-            <span>{text}</span>
+            <span>{children}</span>
         </a>
     )
 }
 
 Link.propTypes = {
     active: PropTypes.bool.isRequired,
-    text: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired,
     onClick: PropTypes.func.isRequired
 }
 

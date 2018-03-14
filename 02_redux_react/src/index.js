@@ -1,16 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import todoApp from './reducers'
+import App from './components/App'
 
-const App = () => {
+let store = createStore(todoApp)
 
-    return (
-        <div>
-            <h1>hello world!</h1>
-        </div>
-    )
-}
-
-ReactDOM.render(
-    <App />,
-    document.getElementById('root')
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
 )
